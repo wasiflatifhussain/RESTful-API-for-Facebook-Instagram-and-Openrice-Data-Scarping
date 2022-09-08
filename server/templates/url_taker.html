@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/70617e008b.js" crossorigin="anonymous"></script>
+  <title>Litro Int.</title>
+</head>
+<body>
+
+  {%block content%}
+
+
+  <header class="site-header">
+    <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+      <div class="container">
+        <a class="navbar-brand mr-4" href="/">LiTRO Database System</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarToggle">
+          <div class="navbar-nav mr-auto">
+            <a class="nav-item nav-link" href="/FB">FB Database</a>
+            <a class="nav-item nav-link" href="/OPR">OPR Database</a>
+            <a class="nav-item nav-link" href="/IG">IG Database</a>
+          </div>
+          <!-- Navbar Right Side -->
+          <div class="navbar-nav">
+            <a class="nav-item nav-link" href="/FB/TQ">FB Queues</a>
+            <a class="nav-item nav-link" href="/OPR/TQ">OPR Queues</a>
+            <a class="nav-item nav-link" href="/IG/TQ">IG Queues</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+
+  
+  <div class="content-section">
+    <form method="POST" action="">
+      {{ form.hidden_tag() }}
+      <fieldset class="form-group">
+        <legend class="border-bottom mb-4">Enter URL</legend>
+        <div class="form-group">
+          {{form.link.label(class="form-control-label")}}
+          {{form.link(class="form-control form-control-lg")}}
+        </div>
+      </fieldset>
+      <div class="form-group">
+        {{form.submit(class="main-but btn btn-success btn-lg btn-block")}}
+      </div>
+    </form>
+  </div>
+  <!--<div class="links">
+    <p class="added-check">To check the links that will be sweeped into queue:</p>
+  <button id="fb-button" class="btn btn-outline-primary btn-lg float-left submit-button">FB Urls to be added</button>
+  <script type="text/javascript">
+    document.getElementById("fb-button").onclick = function() {
+      location.href = "http://127.0.0.1:5001/FB/TQ/add/q"
+    };
+  </script>
+  <button id="ig-button" class="btn btn-outline-danger btn-lg float-left submit-button">IG Urls to be added</button>
+  <script type="text/javascript">
+    document.getElementById("ig-button").onclick = function() {
+      location.href = "http://127.0.0.1:5001/IG/TQ/add/q"
+    };
+  </script>
+  <button id="opr-button" class="btn btn-outline-warning btn-lg submit-button">OPR Urls to be added</button>
+  <script type="text/javascript">
+    document.getElementById("opr-button").onclick = function() {
+      location.href = "http://127.0.0.1:5001/OPR/TQ/add/q"
+    };
+  </script>
+  </div>-->
+
+  <div class="links">
+    <p class="added-check">To check the links that will be sweeped into queue:</p>
+  <button id="fb-side-button" class="btn btn-outline-primary btn-lg float-left submit-button"><i class="fa-brands fa-square-facebook"></i> FB Urls to be added</button>
+  <script type="text/javascript">
+    document.getElementById("fb-side-button").onclick = function() {
+      location.href = "http://127.0.0.1:5001/FB/TQ/add/q"
+    };
+  </script>
+  <button id="ig-side-button" class="btn btn-outline-danger btn-lg float-left submit-button"><i class="fa-brands fa-square-instagram"></i> IG Urls to be added</button>
+  <script type="text/javascript">
+    document.getElementById("ig-side-button").onclick = function() {
+      location.href = "http://127.0.0.1:5001/IG/TQ/add/q"
+    };
+  </script>
+  <button id="opr-side-button" class="btn btn-outline-warning btn-lg submit-button"><i class="fa-solid fa-bowl-food"></i> OPR Urls to be added</button>
+  <script type="text/javascript">
+    document.getElementById("opr-side-button").onclick = function() {
+      location.href = "http://127.0.0.1:5001/OPR/TQ/add/q"
+    }; 
+  </script>
+  </div>
+
+  {%endblock content%}
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

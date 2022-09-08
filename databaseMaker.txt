@@ -1,0 +1,16 @@
+To initiate and create the database=>
+
+> go to the python interactive mode by using command= py
+> use the following commands
+-----------------------------
+>>> from server import db 
+>>> from server.models import FB_Users, FB_Queue, OPR_Users, OPR_Queue, OPR_Adds, FB_Adds, form, IG_Users, IG_Queue, IG_Adds
+>>> db.create_all()
+
+-----------------------------
+
+This helps initiate a visible server and can be viewed over local host web
+
+To delete and make new db=
+enter interactive mode and command-
+>>> db.drop_all() 

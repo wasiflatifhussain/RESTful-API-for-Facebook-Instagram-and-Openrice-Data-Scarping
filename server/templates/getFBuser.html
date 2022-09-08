@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    <title>User Info</title>
+    <!--<link rel="icon" type="image/x-icon" href="opr.ico" />-->
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+        <div class="container">
+          <a class="navbar-brand mr-4" href="/">LiTRO Database System</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarToggle">
+            <div class="navbar-nav mr-auto">
+              <a class="nav-item nav-link" href="/FB">FB Database</a>
+              <a class="nav-item nav-link" href="/OPR">OPR Database</a>
+              <a class="nav-item nav-link" href="/IG">IG Database</a>
+            </div>
+            <!-- Navbar Right Side -->
+            <div class="navbar-nav">
+              <a class="nav-item nav-link" href="/FB/TQ">FB Queues</a>
+              <a class="nav-item nav-link" href="/OPR/TQ">OPR Queues</a>
+              <a class="nav-item nav-link" href="/IG/TQ">IG Queues</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <h1 style="text-align: center" class="heading-tag">User Info Get Request</h1>
+    <table border="1" width="1000px" style="text-align: center; margin: auto">
+      <tr>
+        <!--<th style="background-color: #c8c8c8">URL ID</th>-->
+        <th style="background-color: #c8c8c8">User ID</th>
+        <th style="background-color: #c8c8c8">User's Name</th>
+        <th style="background-color: #c8c8c8">Friends</th>
+      </tr>
+      {% for output in outputs %}
+      <tr width="50px">
+        <!--<td>{{ output.id }}</td>-->
+        <td>{{ output.userid }}</td>
+        <td>{{ output.name }}</td>
+        <td>{{output.friends}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>

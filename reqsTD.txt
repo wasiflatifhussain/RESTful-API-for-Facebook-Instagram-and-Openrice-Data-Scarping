@@ -1,0 +1,7 @@
+> (done but taskqueue thing left) make server branched out. 
+> (done) one entrypoint for whole server(initiailize whole program using one file)
+> (done) add a json path FB/TQ/add to grab the url from add route and pass to TQ and FB. 
+> (done) for taskqueue, add status(done/not start/error) and store the url tq link and dont delete 
+> (done) config.py has key value pairs and use those for time function monitoring
+> try using database transaction instead of sleep
+> (done) try using logging module to log process messages into a file rather than print on cmd
